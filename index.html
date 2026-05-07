@@ -2293,6 +2293,8 @@
     }
     .gift-heart-wrapper:nth-child(2) .gift-heart { animation-delay: -1.2s; }
     .gift-heart-wrapper:nth-child(3) .gift-heart { animation-delay: -2.4s; }
+    /* El sobre pulsa desde el centro (no desde la punta inferior como el corazón) */
+    .gift-envelope { transform-origin: center center; }
 
     @keyframes heart-breathe {
       0%, 100% {
@@ -3277,38 +3279,40 @@
       <p class="gifts-sub fu">Si deseas obsequiarnos algo, hemos preparado estas opciones</p>
 
       <div class="gifts-hearts">
+        <!-- ── Tarjeta 1: Lluvia de Sobres (forma sobre) ── -->
         <article class="gift-heart-wrapper fu">
-          <div class="gift-heart">
+          <div class="gift-heart gift-envelope">
             <svg class="heart-shape" viewBox="0 0 280 260" preserveAspectRatio="none" aria-hidden="true">
               <defs>
-                <linearGradient id="heart-fill-1" x1="0" y1="0" x2="1" y2="1">
-                  <stop offset="0%" stop-color="#FFF8F8"/>
-                  <stop offset="100%" stop-color="#EDE3D7"/>
+                <linearGradient id="heart-fill-1" x1="0" y1="1" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#EDE3D7"/>
+                  <stop offset="100%" stop-color="#FFF8F4"/>
                 </linearGradient>
               </defs>
-              <path d="M140 58 C158 18 228 18 228 80 C228 142 140 230 140 230 C140 230 52 142 52 80 C52 18 122 18 140 58 Z"
+              <!-- Cuerpo del sobre -->
+              <rect x="18" y="52" width="244" height="166" rx="12"
                     fill="url(#heart-fill-1)" stroke="#C5B4A3" stroke-width="1.6"/>
+              <!-- Solapa superior (V) -->
+              <path d="M18 52 L140 146 L262 52"
+                    fill="none" stroke="#C5B4A3" stroke-width="1.6" stroke-linejoin="round"/>
+              <!-- Pliegues inferiores -->
+              <path d="M18 218 L96 158" stroke="#C5B4A3" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M262 218 L184 158" stroke="#C5B4A3" stroke-width="1.2" stroke-linecap="round"/>
+              <!-- Partículas de lluvia encima del sobre -->
+              <line x1="100" y1="30" x2="100" y2="20" stroke="#9E8775" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+              <line x1="140" y1="24" x2="140" y2="14" stroke="#9E8775" stroke-width="1.4" stroke-linecap="round" opacity=".7"/>
+              <line x1="180" y1="30" x2="180" y2="20" stroke="#9E8775" stroke-width="1.4" stroke-linecap="round" opacity=".55"/>
+              <line x1="120" y1="18" x2="120" y2="10" stroke="#C5B4A3" stroke-width="1" stroke-linecap="round" opacity=".4"/>
+              <line x1="160" y1="18" x2="160" y2="10" stroke="#C5B4A3" stroke-width="1" stroke-linecap="round" opacity=".4"/>
             </svg>
-            <div class="heart-content">
-              <div class="gift-icon-sm" aria-hidden="true">
-                <!-- Sobre / envelope SVG -->
-                <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="6" y="13" width="40" height="28" rx="3" stroke-linejoin="round"/>
-                  <path d="M6 16 L26 30 L46 16" stroke-linecap="round" stroke-linejoin="round"/>
-                  <path d="M6 41 L20 27" stroke-linecap="round"/>
-                  <path d="M46 41 L32 27" stroke-linecap="round"/>
-                  <!-- estrella / brillo para evocar lluvia -->
-                  <line x1="24" y1="8" x2="24" y2="5" stroke-linecap="round" stroke-width="1.2"/>
-                  <line x1="28" y1="8" x2="28" y2="5" stroke-linecap="round" stroke-width="1.2"/>
-                  <line x1="32" y1="9" x2="33" y2="6" stroke-linecap="round" stroke-width="1.2"/>
-                </svg>
-              </div>
-              <div class="gift-name-sm fu">Lluvia de Sobres</div>
-              <div class="gift-desc-sm fu">Tu presencia y cariño son nuestro mejor regalo</div>
+            <div class="heart-content" style="padding:100px 42px 30px;justify-content:center;">
+              <div class="gift-name-sm fu" style="font-size:24px;">Lluvia de Sobres</div>
+              <div class="gift-desc-sm fu" style="margin-top:6px;">Tu presencia y cariño son nuestro mejor regalo</div>
             </div>
           </div>
         </article>
 
+        <!-- ── Tarjeta 2: BBVA (corazón centrado) ── -->
         <article class="gift-heart-wrapper fu">
           <div class="gift-heart">
             <svg class="heart-shape" viewBox="0 0 280 260" preserveAspectRatio="none" aria-hidden="true">
@@ -3321,21 +3325,13 @@
               <path d="M140 58 C158 18 228 18 228 80 C228 142 140 230 140 230 C140 230 52 142 52 80 C52 18 122 18 140 58 Z"
                     fill="url(#heart-fill-2)" stroke="#C5B4A3" stroke-width="1.6"/>
             </svg>
-            <div class="heart-content">
-              <div class="gift-icon-sm" aria-hidden="true">
-                <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <rect x="8" y="14" width="36" height="24" rx="3"/>
-                  <line x1="8" y1="22" x2="44" y2="22"/>
-                  <line x1="14" y1="30" x2="22" y2="30" stroke-linecap="round"/>
-                  <line x1="14" y1="34" x2="18" y2="34" stroke-linecap="round"/>
-                </svg>
-              </div>
-              <div class="gift-name-sm fu">BBVA</div>
-              <div class="gift-desc-sm fu">
-                <span class="bank-line" style="font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--text);">Fabiola Cruz</span>
-                <span class="bank-line" style="font-size:10px;letter-spacing:1px;color:rgba(61,46,36,.5);text-transform:uppercase;margin-top:2px;">Tarjeta</span>
-                <span class="clabe" style="font-size:13px;font-weight:600;letter-spacing:2px;">4152 3142 6101 9981</span>
-              </div>
+            <div class="heart-content" style="padding:52px 40px 80px;gap:4px;justify-content:center;align-items:center;text-align:center;">
+              <!-- Logotipo BBVA estilizado -->
+              <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">BBVA</div>
+              <div style="font-family:var(--serif);font-size:20px;font-weight:500;color:var(--text);letter-spacing:.5px;line-height:1.2;">Fabiola Cruz</div>
+              <div style="width:40px;height:1px;background:var(--gold);margin:6px auto;opacity:.6;"></div>
+              <div style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:2.5px;color:var(--text);">4152 3142</div>
+              <div style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:2.5px;color:var(--text);">6101 9981</div>
             </div>
           </div>
           <button type="button" class="gift-btn-heart copy-clabe fu" data-clabe="4152314261019981">Copiar número</button>
@@ -3399,37 +3395,37 @@
             <div class="wgal-item" style="--i:0">
               <div class="wgal-spoke" aria-hidden="true"></div>
               <div class="wgal-card">
-                <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/aaf67907-577c-489d-acf7-91f1026d11f8/1778106808452-0.jpeg" alt="Foto 1" loading="lazy" />
+                <img src="foto-1.jpg" alt="Fabiola y Rafael foto 1" loading="lazy" />
               </div>
             </div>
             <div class="wgal-item" style="--i:1">
               <div class="wgal-spoke" aria-hidden="true"></div>
               <div class="wgal-card">
-                <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/aaf67907-577c-489d-acf7-91f1026d11f8/1778106814138-0.jpeg" alt="Foto 2" loading="lazy" />
+                <img src="foto-2.jpg" alt="Fabiola y Rafael foto 2" loading="lazy" />
               </div>
             </div>
             <div class="wgal-item" style="--i:2">
               <div class="wgal-spoke" aria-hidden="true"></div>
               <div class="wgal-card">
-                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=300&q=70" alt="Foto 3" loading="lazy" />
+                <img src="foto-3.jpg" alt="Fabiola y Rafael foto 3" loading="lazy" />
               </div>
             </div>
             <div class="wgal-item" style="--i:3">
               <div class="wgal-spoke" aria-hidden="true"></div>
               <div class="wgal-card">
-                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=300&q=70" alt="Foto 4" loading="lazy" />
+                <img src="foto-4.jpg" alt="Fabiola y Rafael foto 4" loading="lazy" />
               </div>
             </div>
             <div class="wgal-item" style="--i:4">
               <div class="wgal-spoke" aria-hidden="true"></div>
               <div class="wgal-card">
-                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=300&q=70" alt="Foto 5" loading="lazy" />
+                <img src="foto-5.jpg" alt="Fabiola y Rafael foto 5" loading="lazy" />
               </div>
             </div>
             <div class="wgal-item" style="--i:5">
               <div class="wgal-spoke" aria-hidden="true"></div>
               <div class="wgal-card">
-                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=300&q=70" alt="Foto 6" loading="lazy" />
+                <img src="foto-6.jpg" alt="Fabiola y Rafael foto 6" loading="lazy" />
               </div>
             </div>
           </div>
