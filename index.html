@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
-  <title>Diana Fabiola &amp; Rafael · 10·10·MMXXVI</title>
-  <meta name="description" content="Estás invitado a la boda de Diana Fabiola &amp; Rafael. 10 de Octubre 2026, San Miguel Tecpan, Jilotzingo, Edomex. Un día que jamás olvidarás." />
+  <title>Fabiola &amp; Rafael · 10·10·2026</title>
+  <meta name="description" content="Estás invitado a la boda de Fabiola &amp; Rafael. 10 de Octubre 2026, San Miguel Tecpan, Jilotzingo, Edomex. Un día que jamás olvidarás." />
 
   <!-- ── Open Graph — card bonita en WhatsApp, iMessage, Telegram ── -->
   <meta property="og:type"        content="website" />
-  <meta property="og:title"       content="💍 Diana Fabiola &amp; Rafael · 10 · X · MMXXVI" />
+  <meta property="og:title"       content="💍 Fabiola &amp; Rafael · 10 · Octubre · 2026" />
   <meta property="og:description" content="Nos casamos y queremos que estés ahí. Un día mágico en Jilotzingo — 10 de Octubre 2026 · Abre tu invitación ✉️" />
   <meta property="og:url"         content="https://boda-fabi-y-rafa.vercel.app/" />
   <meta property="og:image"       content="https://boda-fabi-y-rafa.vercel.app/og-image.jpg" />
@@ -16,12 +16,12 @@
   <meta property="og:image:type"  content="image/jpeg" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt"   content="Sobre de invitación de Diana Fabiola y Rafael" />
+  <meta property="og:image:alt"   content="Sobre de invitación de Fabiola y Rafael" />
   <meta property="og:locale"      content="es_MX" />
 
   <!-- ── Twitter / X card ── -->
   <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="💍 Diana Fabiola &amp; Rafael · 10 · X · MMXXVI" />
+  <meta name="twitter:title"       content="💍 Fabiola &amp; Rafael · 10 · Octubre · 2026" />
   <meta name="twitter:description" content="Nos casamos y queremos que estés ahí. Jilotzingo, Edomex — 10 de Octubre 2026 ✉️" />
   <meta name="twitter:url"         content="https://boda-fabi-y-rafa.vercel.app/" />
   <meta name="twitter:image"       content="https://boda-fabi-y-rafa.vercel.app/og-image.jpg" />
@@ -713,21 +713,64 @@
     /* ── DRESS CODE ──────────────────────────────────── */
     #dresscode { background: var(--bg); text-align: center; }
 
+    /* Columnas Damas / Caballeros */
+    .dc-cols {
+      display: flex;
+      gap: 0;
+      align-items: flex-start;
+      margin: 0 0 32px;
+    }
+    .dc-col {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 14px;
+    }
+    .dc-divider {
+      width: 1px;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      align-self: stretch;
+      flex-shrink: 0;
+    }
+    .dc-col-title {
+      font-family: var(--serif);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .dc-col-desc {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      color: rgba(61,46,36,.6);
+      line-height: 1.5;
+    }
+
     .dc-note {
       font-family: var(--serif);
       font-size: 16px;
       font-weight: 300;
       font-style: italic;
       color: rgba(61,46,36,.65);
-      margin-bottom: 40px;
+      margin-bottom: 28px;
     }
 
-    .swatches {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
+    /* Swatches — 3 arriba, 2 abajo, centrados */
+    .swatches-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       gap: 14px;
-      justify-items: center;
       margin-bottom: 24px;
+    }
+    .swatches-row {
+      display: flex;
+      justify-content: center;
+      gap: 18px;
     }
 
     .swatch {
@@ -740,8 +783,8 @@
     }
 
     .sw-circle {
-      width: 62px;
-      height: 62px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
       box-shadow: 0 6px 18px rgba(61,46,36,.14), 0 0 0 3px rgba(255,255,255,.7);
       border: 3px solid rgba(255,255,255,.7);
@@ -761,6 +804,14 @@
       letter-spacing: 1px;
       color: rgba(61,46,36,.4);
       margin-top: 6px;
+    }
+
+    /* ── MAP EMBED ───────────────────────────────────── */
+    .map-embed {
+      margin-top: 16px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(61,46,36,.1);
     }
 
     /* ── FAMILY ──────────────────────────────────────── */
@@ -1212,10 +1263,10 @@
     body { background: transparent; }
 
     /* Secciones sin fondo explícito — translúcidas SIN backdrop-filter (era causa de stutter en scroll) */
-    #ubicacion, #calendar, #dresscode, #gifts { background: rgba(250,246,240,.78); }
+    #ubicacion, #calendar, #dresscode, #gifts, #galeria { background: rgba(250,246,240,.78); }
     #hospedaje { background: rgba(250,246,240,.78); }
     #cuenta, #familia { background: rgba(237,227,215,.82); }
-    #kids-policy, #album, #rsvp { background: linear-gradient(180deg, rgba(237,227,215,.82) 0%, rgba(250,246,240,.82) 100%); }
+    #album, #rsvp { background: linear-gradient(180deg, rgba(237,227,215,.82) 0%, rgba(250,246,240,.82) 100%); }
 
     /* ══════════════════════════════════════════════════════
        COUNTDOWN — rediseño elegante con tema de rosas
@@ -1419,54 +1470,6 @@
     .rose-corner.tr { top: 16px; right: 16px; transform: scaleX(-1); }
     .rose-corner.bl { bottom: 16px; left: 16px; transform: scaleY(-1); }
     .rose-corner.br { bottom: 16px; right: 16px; transform: scale(-1,-1); }
-
-    /* ══════════════════════════════════════════════════════
-       KIDS POLICY — sin niños
-    ══════════════════════════════════════════════════════ */
-    #kids-policy {
-      background: linear-gradient(180deg, var(--surface) 0%, var(--bg) 100%);
-      text-align: center;
-    }
-    .kids-card {
-      margin: 32px auto 0;
-      max-width: 360px;
-      background: linear-gradient(145deg, var(--bg), var(--crema));
-      border: 1px solid rgba(197,180,163,.22);
-      border-radius: var(--r-lg);
-      padding: 32px 26px 28px;
-      box-shadow:
-        0 4px 14px rgba(61,46,36,.05),
-        0 14px 40px -14px rgba(158,135,117,.18);
-      position: relative;
-    }
-    .kids-icon {
-      width: 64px;
-      height: 64px;
-      margin: 0 auto 18px;
-      color: var(--accent);
-    }
-    .kids-icon svg { width: 100%; height: 100%; }
-    .kids-heading {
-      font-family: var(--serif);
-      font-size: 24px;
-      font-weight: 400;
-      line-height: 1.25;
-      color: var(--text);
-      margin-bottom: 14px;
-    }
-    .kids-heading .script {
-      font-family: var(--script);
-      font-size: 32px;
-      color: var(--accent);
-      font-weight: 400;
-    }
-    .kids-text {
-      font-family: var(--serif);
-      font-size: 15px;
-      font-style: italic;
-      line-height: 1.75;
-      color: rgba(61,46,36,.72);
-    }
 
     /* ══════════════════════════════════════════════════════
        GIFTS — mesa de regalos (centrado)
@@ -1686,7 +1689,7 @@
     #itinerario > *:not(.rose-watermark):not(.corner-decor),
     #dresscode > *:not(.rose-watermark),
     #familia > *:not(.rose-watermark),
-    #kids-policy > *:not(.rose-watermark),
+    #galeria > *:not(.rose-watermark),
     #gifts > *:not(.rose-watermark),
     #album > *:not(.rose-watermark),
     #rsvp > *:not(.rose-watermark) {
@@ -2424,9 +2427,269 @@
       .hero-heart { opacity: 1 !important; transform: scale(1) !important; }
       .hero-amp, .hero-date, .hero-city, .hero-scroll { opacity: 1 !important; transform: none !important; }
       .itin-card { opacity: 1 !important; transform: none !important; }
+      .itv3-gem { opacity: 1 !important; transform: rotate(45deg) scale(1) !important; }
       #envelope-screen { display: none !important; }
       #main-content { visibility: visible !important; }
     }
+
+    /* ── ITINERARIO V3 — glow timeline ───────────────── */
+    #itinerario { position: relative; }
+    .itv3 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: 8px 0 24px;
+      margin-top: 44px;
+    }
+    .itv3-track {
+      position: absolute;
+      left: 50%;
+      top: 0; bottom: 0;
+      width: 1px;
+      transform: translateX(-50%);
+      background: linear-gradient(180deg, transparent 0%, rgba(197,180,163,.55) 8%, rgba(197,180,163,.55) 92%, transparent 100%);
+      pointer-events: none;
+    }
+    .itv3-glow {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      transform: translateX(-50%);
+      width: 5px;
+      height: 110px;
+      margin-left: -2px;
+      background: linear-gradient(180deg, transparent, rgba(232,213,196,.9), transparent);
+      filter: blur(3px);
+      pointer-events: none;
+      will-change: top;
+    }
+    .itv3-item {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      padding: 28px 0;
+    }
+    .itv3-item:nth-child(odd) {
+      flex-direction: row;
+      text-align: right;
+      padding-right: calc(50% + 28px);
+    }
+    .itv3-item:nth-child(even) {
+      flex-direction: row-reverse;
+      text-align: left;
+      padding-left: calc(50% + 28px);
+    }
+    .itv3-gem {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      width: 9px;
+      height: 9px;
+      background: var(--gold);
+      border-radius: 2px;
+      box-shadow: 0 0 0 3px rgba(197,180,163,.25), 0 0 12px rgba(197,180,163,.5);
+      flex-shrink: 0;
+    }
+    .itv3-content { flex: 1; }
+    .itv3-time {
+      font-family: var(--serif);
+      font-size: 34px;
+      font-weight: 300;
+      letter-spacing: 6px;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .itv3-ev {
+      font-family: var(--serif);
+      font-size: 13px;
+      font-style: italic;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(232,213,196,.8);
+      line-height: 1.4;
+    }
+    .itv3-desc {
+      font-family: var(--sans);
+      font-size: 11px;
+      color: rgba(232,213,196,.45);
+      letter-spacing: .4px;
+      margin-top: 3px;
+      line-height: 1.5;
+    }
+
+    /* ── FORTUNE WHEEL GALLERY ───────────────────────── */
+    #galeria { background: var(--bg); padding: 80px 0 96px; text-align: center; overflow: hidden; }
+    #galeria .label, #galeria .title, #galeria .subtitle { padding: 0 24px; }
+
+    .wgal-wrap { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; margin-top: 40px; }
+    .wgal-scene {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      overflow: hidden;
+    }
+    .wgal-rim {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 320px;
+      border-radius: 50%;
+      border: 1px solid rgba(197,180,163,.25);
+      pointer-events: none;
+    }
+    .wgal-rim2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      border: 1px dashed rgba(197,180,163,.12);
+      pointer-events: none;
+    }
+    .wgal-hub {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 16px rgba(197,180,163,.6);
+      pointer-events: none;
+      z-index: 4;
+    }
+    .wgal-wheel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+    }
+    .wgal-item {
+      position: absolute;
+      width: 100px;
+      height: 133px;
+      margin-left: -50px;
+      margin-top: -207px;
+      transform-origin: 50px 207px;
+      transform: rotate(calc(var(--i) * 60deg));
+    }
+    .wgal-spoke {
+      position: absolute;
+      top: 133px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 74px;
+      background: linear-gradient(180deg, rgba(197,180,163,.5), rgba(197,180,163,.15));
+    }
+    .wgal-card {
+      width: 100px;
+      height: 133px;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 8px 28px rgba(61,46,36,.22), 0 0 0 1px rgba(197,180,163,.2);
+    }
+    .wgal-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      pointer-events: none;
+    }
+    .wgal-hint {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(61,46,36,.4);
+      margin-top: 20px;
+    }
+
+    /* ── HOSPEDAJE GRID 3+2 ──────────────────────────── */
+    .hosp-grid {
+      margin-top: 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hosp-row {
+      display: flex;
+      gap: 14px;
+      justify-content: center;
+    }
+    .hosp-card {
+      flex: 1;
+      min-width: 0;
+      background: linear-gradient(145deg, var(--surface), var(--crema));
+      border: 1px solid rgba(158,135,117,.18);
+      border-radius: 18px;
+      padding: 22px 16px 18px;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      transition: box-shadow .3s, transform .3s;
+    }
+    .hosp-card:hover { box-shadow: 0 8px 28px rgba(61,46,36,.12); transform: translateY(-3px); }
+    .hosp-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(165,195,162,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--salvia);
+    }
+    .hosp-icon svg { width: 18px; height: 18px; }
+    .hosp-script {
+      font-family: var(--script);
+      font-size: 20px;
+      color: var(--accent);
+    }
+    .hosp-name {
+      font-family: var(--serif);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .hosp-link {
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 1px;
+      color: var(--accent);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+    .btn-hosp-maps {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 100px;
+      background: rgba(158,135,117,.1);
+      border: 1px solid rgba(158,135,117,.25);
+      font-family: var(--sans);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      transition: background .25s, border-color .25s;
+      text-decoration: none;
+      margin-top: 4px;
+    }
+    .btn-hosp-maps:hover { background: rgba(158,135,117,.2); border-color: rgba(158,135,117,.4); }
+    .btn-hosp-maps svg { width: 12px; height: 12px; }
   </style>
 </head>
 <body>
@@ -2440,7 +2703,7 @@
     <div class="bg-slide" data-section="ubicacion" style="background-image:url('https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=1200&q=70')"></div>
     <div class="bg-slide" data-section="itinerario" style="background-image:url('https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=1200&q=70')"></div>
     <div class="bg-slide" data-section="dresscode"  style="background-image:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/aaf67907-577c-489d-acf7-91f1026d11f8/1778106808452-0.jpeg')"></div>
-    <div class="bg-slide" data-section="kids-policy" style="background-image:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/aaf67907-577c-489d-acf7-91f1026d11f8/1778106814138-0.jpeg')"></div>
+    <div class="bg-slide" data-section="familia" style="background-image:url('https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/aaf67907-577c-489d-acf7-91f1026d11f8/1778106814138-0.jpeg')"></div>
     <div class="bg-tint"></div>
   </div>
 
@@ -2453,7 +2716,7 @@
   <div id="envelope-screen" role="button" aria-label="Toca para abrir tu invitación">
 
     <!-- Imagen estática del sobre (IA generada) -->
-    <img id="env-image" src="sobre.png" alt="Sobre invitación Diana Fabiola &amp; Rafael" />
+    <img id="env-image" src="sobre.png" alt="Sobre invitación Fabiola &amp; Rafael" />
 
     <!-- Video de apertura (IA generada) — oculto hasta el tap -->
     <video id="env-video" src="sobre-apertura.mp4" playsinline webkit-playsinline muted preload="auto"></video>
@@ -2504,8 +2767,8 @@
 
       <div class="hero-content">
         <div class="hero-ornament-top" id="hero-orn-top" aria-hidden="true"></div>
-        <h1 class="hero-names" id="hero-names" aria-label="Diana Fabiola y Rafael">
-          <span class="hero-line" data-name="Diana Fabiola"></span>
+        <h1 class="hero-names" id="hero-names" aria-label="Fabiola y Rafael">
+          <span class="hero-line" data-name="Fabiola"></span>
           <span class="hero-heart-wrap" aria-hidden="true">
             <svg class="hero-heart" id="hero-heart" viewBox="0 0 32 30" fill="currentColor">
               <path d="M16 8 C19 2 30 2 30 11 C30 20 16 28 16 28 C16 28 2 20 2 11 C2 2 13 2 16 8 Z"/>
@@ -2514,7 +2777,7 @@
           <span class="hero-line" data-name="Rafael"></span>
         </h1>
         <div class="hero-ornament-bottom" id="hero-orn-bottom" aria-hidden="true"></div>
-        <p class="hero-date"  id="hero-date">10 · Octubre · MMXXVI</p>
+        <p class="hero-date"  id="hero-date">10 · Octubre · 2026</p>
         <p class="hero-city"  id="hero-city">Jilotzingo · Estado de México</p>
       </div>
 
@@ -2689,6 +2952,13 @@
             </svg>
             Cómo llegar
           </a>
+          <div class="map-embed fu">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.2!2d-99.4!3d19.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d22b3b3a3a3a3a%3A0x1!2sParroquia+de+San+Miguel+Tecpan%2C+Jilotzingo%2C+Estado+de+M%C3%A9xico!5e0!3m2!1ses!2smx!4v1"
+              width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa Parroquia de San Miguel Tecpan"></iframe>
+          </div>
         </article>
 
         <article class="loc-card-v2 fu">
@@ -2721,6 +2991,13 @@
             </svg>
             Cómo llegar
           </a>
+          <div class="map-embed fu">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3760.2!2d-99.395!3d19.498!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d22b3b3b3b3b3b%3A0x2!2sSal%C3%B3n+de+eventos%2C+San+Miguel+Tecpan%2C+Jilotzingo!5e0!3m2!1ses!2smx!4v1"
+              width="100%" height="200" style="border:0;border-radius:12px;" allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Mapa Salón de eventos San Miguel Tecpan"></iframe>
+          </div>
         </article>
       </div>
     </section>
@@ -2731,10 +3008,10 @@
       <h2 class="title fu">Agéndalo ya</h2>
       <p class="subtitle fu">Guarda esta fecha especial en tu calendario</p>
       <a
-        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Diana+Fabiola+%26+Rafael&dates=20261010T134500%2F20261010T235900&details=Ceremonia+en+Parroquia+de+San+Miguel+Tecpan+(1%3A45+pm)+%7C+Recepci%C3%B3n+(3%3A30+pm)&location=San+Miguel+Tecpan%2C+Jilotzingo%2C+Edomex"
+        href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Boda+Fabiola+%26+Rafael&dates=20261010T134500%2F20261010T235900&details=Ceremonia+en+Parroquia+de+San+Miguel+Tecpan+(1%3A45+pm)+%7C+Recepci%C3%B3n+(3%3A30+pm)&location=San+Miguel+Tecpan%2C+Jilotzingo%2C+Edomex"
         target="_blank" rel="noopener noreferrer"
         class="btn-cal fu"
-        aria-label="Agregar la boda de Diana Fabiola y Rafael a Google Calendar"
+        aria-label="Agregar la boda de Fabiola y Rafael a Google Calendar"
       >
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
           <rect x="3" y="4" width="18" height="18" rx="2"/>
@@ -2779,134 +3056,64 @@
       </div>
       <p class="subtitle fu" style="text-align:center;">Una noche que jamás olvidarán</p>
 
-      <div class="itin-container" role="list">
-        <div class="itin-line" id="itin-line" aria-hidden="true"></div>
+      <div class="itv3" id="siti">
+        <div class="itv3-track" id="itv3-track" aria-hidden="true"></div>
+        <div class="itv3-glow" id="itvGlow" aria-hidden="true"></div>
 
-        <div class="itin-card" role="listitem">
-          <div class="itin-card-shine"></div>
-          <svg class="itin-corner-rose" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-            <circle cx="11" cy="11" r="2.2"/>
-            <circle cx="11" cy="11" r="4.2" opacity=".7"/>
-            <path d="M4 11 Q6 5 11 7" stroke-linecap="round"/>
-            <path d="M18 11 Q16 5 11 7" stroke-linecap="round"/>
-            <path d="M4 11 Q6 17 11 15" stroke-linecap="round"/>
-            <path d="M18 11 Q16 17 11 15" stroke-linecap="round"/>
-          </svg>
-          <div class="itin-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-            </svg>
+        <div class="itv3-item">
+          <div class="itv3-gem"></div>
+          <div class="itv3-content">
+            <time class="itv3-time" datetime="2026-10-10T14:00">2:00</time>
+            <p class="itv3-ev">Llegada de invitados</p>
+            <p class="itv3-desc">Recibimiento en el atrio</p>
           </div>
-          <time class="itin-time" datetime="2026-10-10T14:00">2:00 pm</time>
-          <p class="itin-event">Llegada de invitados</p>
-          <p class="itin-desc">Recibimiento en el atrio de la parroquia</p>
         </div>
 
-        <div class="itin-card" role="listitem">
-          <div class="itin-card-shine"></div>
-          <svg class="itin-corner-rose" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-            <circle cx="11" cy="11" r="2.2"/>
-            <circle cx="11" cy="11" r="4.2" opacity=".7"/>
-            <path d="M4 11 Q6 5 11 7" stroke-linecap="round"/>
-            <path d="M18 11 Q16 5 11 7" stroke-linecap="round"/>
-            <path d="M4 11 Q6 17 11 15" stroke-linecap="round"/>
-            <path d="M18 11 Q16 17 11 15" stroke-linecap="round"/>
-          </svg>
-          <div class="itin-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            </svg>
+        <div class="itv3-item">
+          <div class="itv3-gem"></div>
+          <div class="itv3-content">
+            <time class="itv3-time" datetime="2026-10-10T13:45">1:45</time>
+            <p class="itv3-ev">Misa</p>
+            <p class="itv3-desc">Parroquia de San Miguel Tecpan</p>
           </div>
-          <time class="itin-time" datetime="2026-10-10T13:45">1:45 pm</time>
-          <p class="itin-event">Misa</p>
-          <p class="itin-desc">Ceremonia religiosa en la Parroquia de San Miguel Tecpan</p>
         </div>
 
-        <div class="itin-card" role="listitem">
-          <div class="itin-card-shine"></div>
-          <svg class="itin-corner-rose" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-            <circle cx="11" cy="11" r="2.2"/>
-            <circle cx="11" cy="11" r="4.2" opacity=".7"/>
-            <path d="M4 11 Q6 5 11 7" stroke-linecap="round"/>
-            <path d="M18 11 Q16 5 11 7" stroke-linecap="round"/>
-            <path d="M4 11 Q6 17 11 15" stroke-linecap="round"/>
-            <path d="M18 11 Q16 17 11 15" stroke-linecap="round"/>
-          </svg>
-          <div class="itin-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M8 2v4M16 2v4M3.5 9.09h17M21 8v11a3 3 0 01-3 3H6a3 3 0 01-3-3V8a3 3 0 013-3h12a3 3 0 013 3z"/>
-              <path d="M8 14h.01M12 14h.01M16 14h.01"/>
-            </svg>
+        <div class="itv3-item">
+          <div class="itv3-gem"></div>
+          <div class="itv3-content">
+            <time class="itv3-time" datetime="2026-10-10T15:30">3:30</time>
+            <p class="itv3-ev">Recepción</p>
+            <p class="itv3-desc">Bienvenida a los novios en el salón</p>
           </div>
-          <time class="itin-time" datetime="2026-10-10T15:30">3:30 pm</time>
-          <p class="itin-event">Recepción en salón</p>
-          <p class="itin-desc">Bienvenida a los novios en el salón</p>
         </div>
 
-        <div class="itin-card" role="listitem">
-          <div class="itin-card-shine"></div>
-          <svg class="itin-corner-rose" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-            <circle cx="11" cy="11" r="2.2"/>
-            <circle cx="11" cy="11" r="4.2" opacity=".7"/>
-            <path d="M4 11 Q6 5 11 7" stroke-linecap="round"/>
-            <path d="M18 11 Q16 5 11 7" stroke-linecap="round"/>
-            <path d="M4 11 Q6 17 11 15" stroke-linecap="round"/>
-            <path d="M18 11 Q16 17 11 15" stroke-linecap="round"/>
-          </svg>
-          <div class="itin-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8z"/>
-              <line x1="6" y1="1" x2="6" y2="4"/>
-              <line x1="10" y1="1" x2="10" y2="4"/>
-              <line x1="14" y1="1" x2="14" y2="4"/>
-            </svg>
+        <div class="itv3-item">
+          <div class="itv3-gem"></div>
+          <div class="itv3-content">
+            <time class="itv3-time" datetime="2026-10-10T16:00">4:00</time>
+            <p class="itv3-ev">Comida</p>
+            <p class="itv3-desc">Banquete de celebración</p>
           </div>
-          <time class="itin-time" datetime="2026-10-10T16:00">4:00 pm</time>
-          <p class="itin-event">Comida</p>
-          <p class="itin-desc">Banquete de celebración</p>
         </div>
 
-        <div class="itin-card" role="listitem">
-          <div class="itin-card-shine"></div>
-          <svg class="itin-corner-rose" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-            <circle cx="11" cy="11" r="2.2"/>
-            <circle cx="11" cy="11" r="4.2" opacity=".7"/>
-            <path d="M4 11 Q6 5 11 7" stroke-linecap="round"/>
-            <path d="M18 11 Q16 5 11 7" stroke-linecap="round"/>
-            <path d="M4 11 Q6 17 11 15" stroke-linecap="round"/>
-            <path d="M18 11 Q16 17 11 15" stroke-linecap="round"/>
-          </svg>
-          <div class="itin-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <circle cx="5.5" cy="17.5" r="2.5"/>
-              <circle cx="17.5" cy="15.5" r="2.5"/>
-              <path d="M8 17V5l12-2v10"/>
-            </svg>
+        <div class="itv3-item">
+          <div class="itv3-gem"></div>
+          <div class="itv3-content">
+            <time class="itv3-time" datetime="2026-10-10T17:40">5:40</time>
+            <p class="itv3-ev">Vals de novios</p>
+            <p class="itv3-desc">El primer baile de Fabiola y Rafael</p>
           </div>
-          <time class="itin-time" datetime="2026-10-10T17:40">5:40 pm</time>
-          <p class="itin-event">Vals de novios</p>
-          <p class="itin-desc">El primer baile de Diana Fabiola y Rafael</p>
         </div>
 
-        <div class="itin-card" role="listitem">
-          <div class="itin-card-shine"></div>
-          <svg class="itin-corner-rose" viewBox="0 0 22 22" fill="none" stroke="currentColor" stroke-width="1" aria-hidden="true">
-            <circle cx="11" cy="11" r="2.2"/>
-            <circle cx="11" cy="11" r="4.2" opacity=".7"/>
-            <path d="M4 11 Q6 5 11 7" stroke-linecap="round"/>
-            <path d="M18 11 Q16 5 11 7" stroke-linecap="round"/>
-            <path d="M4 11 Q6 17 11 15" stroke-linecap="round"/>
-            <path d="M18 11 Q16 17 11 15" stroke-linecap="round"/>
-          </svg>
-          <div class="itin-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
-              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
-            </svg>
+        <div class="itv3-item">
+          <div class="itv3-gem"></div>
+          <div class="itv3-content">
+            <time class="itv3-time" datetime="2026-10-10T18:00">6:00</time>
+            <p class="itv3-ev">Fiesta</p>
+            <p class="itv3-desc">Celebración y baile hasta el amanecer</p>
           </div>
-          <time class="itin-time" datetime="2026-10-10T18:00">6:00 pm</time>
-          <p class="itin-event">Fiesta</p>
-          <p class="itin-desc">Celebración y baile hasta el amanecer</p>
         </div>
+
       </div>
     </section>
 
@@ -2939,28 +3146,45 @@
         </svg>
         <div class="rd-line"></div>
       </div>
-      <p class="dc-note fu">Mujeres vestido · Hombres traje</p>
 
-      <div class="swatches" role="list" aria-label="Paleta de colores sugerida">
-        <div class="swatch" role="listitem">
-          <div class="sw-circle" style="background:#d190f4" aria-label="Lila"></div>
-          <span class="sw-name">Lila</span>
+      <!-- Columnas Damas / Caballeros -->
+      <div class="dc-cols fu">
+        <div class="dc-col">
+          <p class="dc-col-title">Damas</p>
+          <p class="dc-col-desc">Vestido<br>largo o midi</p>
         </div>
-        <div class="swatch" role="listitem">
-          <div class="sw-circle" style="background:#121212" aria-label="Negro"></div>
-          <span class="sw-name">Negro</span>
+        <div class="dc-divider"></div>
+        <div class="dc-col">
+          <p class="dc-col-title">Caballeros</p>
+          <p class="dc-col-desc">Traje<br>o smoking</p>
         </div>
-        <div class="swatch" role="listitem">
-          <div class="sw-circle" style="background:#ffc67a" aria-label="Durazno"></div>
-          <span class="sw-name">Durazno</span>
+      </div>
+
+      <!-- Paleta recomendada 3 arriba + 2 abajo -->
+      <div class="swatches-wrap" id="swatches" role="list" aria-label="Paleta de colores sugerida">
+        <div class="swatches-row">
+          <div class="swatch" role="listitem">
+            <div class="sw-circle" style="background:#d190f4" aria-label="Lila"></div>
+            <span class="sw-name">Lila</span>
+          </div>
+          <div class="swatch" role="listitem">
+            <div class="sw-circle" style="background:#ffc67a" aria-label="Durazno"></div>
+            <span class="sw-name">Durazno</span>
+          </div>
+          <div class="swatch" role="listitem">
+            <div class="sw-circle" style="background:#a5c3a2" aria-label="Salvia"></div>
+            <span class="sw-name">Salvia</span>
+          </div>
         </div>
-        <div class="swatch" role="listitem">
-          <div class="sw-circle" style="background:#fb83b7" aria-label="Rosa"></div>
-          <span class="sw-name">Rosa</span>
-        </div>
-        <div class="swatch" role="listitem">
-          <div class="sw-circle" style="background:#c2ebff" aria-label="Azul cielo"></div>
-          <span class="sw-name">Azul cielo</span>
+        <div class="swatches-row">
+          <div class="swatch" role="listitem">
+            <div class="sw-circle" style="background:#c2ebff" aria-label="Azul cielo"></div>
+            <span class="sw-name">Azul cielo</span>
+          </div>
+          <div class="swatch" role="listitem">
+            <div class="sw-circle" style="background:#f8c8d4" aria-label="Rosa palo"></div>
+            <span class="sw-name">Rosa palo</span>
+          </div>
         </div>
       </div>
 
@@ -3024,51 +3248,12 @@
         <div class="fam-heading">
           <span class="fam-script">Padrinos</span>
         </div>
-        <span class="fam-eyebrow fu">de velación</span>
+        <span class="fam-eyebrow fu">de nuestra boda</span>
         <div class="fam-members-v2">
           <div class="fam-entry fu">
             <span class="fam-name-v2">Diana Cruz Iñigo<br>&amp; Jesus Martinez Ibarra</span>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ── 8. SIN NIÑOS ─────────────────────────────── -->
-    <section id="kids-policy" aria-label="Aviso: solo adultos">
-      <svg class="rose-watermark xl" style="top:28%;right:-70px;transform:rotate(14deg)" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark lg" style="top:58%;left:-55px;transform:rotate(-20deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark md" style="top:45%;right:8%;transform:rotate(-8deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark sm" style="top:18%;right:22%;transform:rotate(18deg)" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark sm" style="top:72%;left:18%;transform:rotate(-30deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark xs" style="top:38%;left:8%;transform:rotate(24deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark xs" style="top:82%;right:20%;transform:rotate(-15deg)" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark xxs" style="top:24%;left:38%;transform:rotate(12deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark xxs" style="top:62%;right:32%;transform:rotate(-22deg)" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-      <svg class="rose-watermark xxs" style="top:90%;left:48%;transform:rotate(8deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
-
-
-
-      <p class="label fu">Aviso especial</p>
-      <h2 class="title fu">Una celebración <span style="font-family:var(--script);color:var(--accent);font-size:42px;">de</span> adultos</h2>
-      <div class="rose-divider fu">
-        <div class="rd-line"></div>
-        <svg class="rd-rose" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
-          <path d="M20 12c-2.5 0-4 1.8-4 3.8 0 1.6 1.2 2.9 2.8 3.2-1.6.3-2.8 1.6-2.8 3.2 0 2 1.5 3.8 4 3.8s4-1.8 4-3.8c0-1.6-1.2-2.9-2.8-3.2 1.6-.3 2.8-1.6 2.8-3.2 0-2-1.5-3.8-4-3.8z"/>
-          <path d="M20 8c-5 2-7 5-8 9" stroke-linecap="round"/>
-          <path d="M20 8c5 2 7 5 8 9" stroke-linecap="round"/>
-          <path d="M14 29c2 1 4 1.5 6 1.5s4-.5 6-1.5" stroke-linecap="round"/>
-        </svg>
-        <div class="rd-line"></div>
-      </div>
-      <div class="kids-card fu">
-        <div class="kids-icon">
-          <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
-            <circle cx="32" cy="22" r="6"/>
-            <path d="M20 42c0-6 5-11 12-11s12 5 12 11v4H20z"/>
-            <line x1="14" y1="14" x2="50" y2="50" stroke-width="1.6"/>
-          </svg>
-        </div>
-        <p class="kids-text">Con todo el cariño, hemos decidido que nuestra celebración sea exclusivamente para adultos. Agradecemos profundamente tu comprensión y esperamos disfrutes una noche libre y a tu ritmo.</p>
       </div>
     </section>
 
@@ -3106,13 +3291,19 @@
             </svg>
             <div class="heart-content">
               <div class="gift-icon-sm" aria-hidden="true">
+                <!-- Sobre / envelope SVG -->
                 <svg viewBox="0 0 52 52" fill="none" stroke="currentColor" stroke-width="1.5">
-                  <path d="M8 10 L44 10 L44 14 Q26 18 8 14 Z" stroke-linejoin="round"/>
-                  <path d="M8 10 L8 42 L44 42 L44 10" stroke-linejoin="round"/>
-                  <path d="M8 14 L26 28 L44 14" stroke-linecap="round" stroke-linejoin="round"/>
+                  <rect x="6" y="13" width="40" height="28" rx="3" stroke-linejoin="round"/>
+                  <path d="M6 16 L26 30 L46 16" stroke-linecap="round" stroke-linejoin="round"/>
+                  <path d="M6 41 L20 27" stroke-linecap="round"/>
+                  <path d="M46 41 L32 27" stroke-linecap="round"/>
+                  <!-- estrella / brillo para evocar lluvia -->
+                  <line x1="24" y1="8" x2="24" y2="5" stroke-linecap="round" stroke-width="1.2"/>
+                  <line x1="28" y1="8" x2="28" y2="5" stroke-linecap="round" stroke-width="1.2"/>
+                  <line x1="32" y1="9" x2="33" y2="6" stroke-linecap="round" stroke-width="1.2"/>
                 </svg>
               </div>
-              <div class="gift-name-sm fu">Lluvia de sobres</div>
+              <div class="gift-name-sm fu">Lluvia de Sobres</div>
               <div class="gift-desc-sm fu">Tu presencia y cariño son nuestro mejor regalo</div>
             </div>
           </div>
@@ -3141,8 +3332,9 @@
               </div>
               <div class="gift-name-sm fu">BBVA</div>
               <div class="gift-desc-sm fu">
-                <span class="bank-line"><b>TARJETA</b><span class="clabe">4152 3142 6101 9981</span></span>
-                <span class="bank-line">Fabiola Cruz</span>
+                <span class="bank-line" style="font-size:12px;font-weight:600;letter-spacing:.5px;color:var(--text);">Fabiola Cruz</span>
+                <span class="bank-line" style="font-size:10px;letter-spacing:1px;color:rgba(61,46,36,.5);text-transform:uppercase;margin-top:2px;">Tarjeta</span>
+                <span class="clabe" style="font-size:13px;font-weight:600;letter-spacing:2px;">4152 3142 6101 9981</span>
               </div>
             </div>
           </div>
@@ -3179,7 +3371,70 @@
       </div>
       <p class="album-text fu">Escanea el código QR para subir tus fotos al álbum del evento. Queremos vivir el día desde tus ojos también.</p>
       <div class="album-qr fu">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=6B5B4E&bgcolor=FAF6F0&data=https%3A%2F%2Fboda-fabi-y-rafa.vercel.app" alt="QR invitación Diana Fabiola y Rafael" width="240" height="240" loading="lazy" />
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=6B5B4E&bgcolor=FAF6F0&data=https%3A%2F%2Fboda-fabi-y-rafa.vercel.app" alt="QR invitación Fabiola y Rafael" width="240" height="240" loading="lazy" />
+      </div>
+    </section>
+
+    <!-- ── GALERÍA — RUEDA DE LA FORTUNA ─────────── -->
+    <section id="galeria" aria-label="Galería de fotos">
+      <svg class="rose-watermark xl" style="top:28%;right:-70px;transform:rotate(14deg)" viewBox="0 0 100 100" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
+      <svg class="rose-watermark lg" style="top:58%;left:-55px;transform:rotate(-20deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
+      <svg class="rose-watermark md" style="top:45%;right:8%;transform:rotate(-8deg)" viewBox="0 0 100 100" aria-hidden="true" fill="currentColor"><path d="M50 84 C30 70 10 55 10 34 C10 22 20 13 31 13 C40 13 46 17 50 23 C54 17 60 13 69 13 C80 13 90 22 90 34 C90 55 70 70 50 84 Z"/></svg>
+
+      <p class="label fu">Nuestros momentos</p>
+      <h2 class="title fu">Galería</h2>
+      <div class="ornament-divider fu">
+        <div class="line"></div>
+        <div class="diamond"></div>
+        <div class="line"></div>
+      </div>
+      <p class="subtitle fu">Un giro hacia los recuerdos</p>
+
+      <div class="wgal-wrap fu" id="wgalWrap">
+        <div class="wgal-scene">
+          <div class="wgal-rim" aria-hidden="true"></div>
+          <div class="wgal-rim2" aria-hidden="true"></div>
+          <div class="wgal-hub" aria-hidden="true"></div>
+          <div class="wgal-wheel" id="photoWheel">
+            <div class="wgal-item" style="--i:0">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/aaf67907-577c-489d-acf7-91f1026d11f8/1778106808452-0.jpeg" alt="Foto 1" loading="lazy" />
+              </div>
+            </div>
+            <div class="wgal-item" style="--i:1">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="https://bsjoelxktbvlavfoozhk.supabase.co/storage/v1/object/public/fotos-clientes/aaf67907-577c-489d-acf7-91f1026d11f8/1778106814138-0.jpeg" alt="Foto 2" loading="lazy" />
+              </div>
+            </div>
+            <div class="wgal-item" style="--i:2">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?w=300&q=70" alt="Foto 3" loading="lazy" />
+              </div>
+            </div>
+            <div class="wgal-item" style="--i:3">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=300&q=70" alt="Foto 4" loading="lazy" />
+              </div>
+            </div>
+            <div class="wgal-item" style="--i:4">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=300&q=70" alt="Foto 5" loading="lazy" />
+              </div>
+            </div>
+            <div class="wgal-item" style="--i:5">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=300&q=70" alt="Foto 6" loading="lazy" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <p class="wgal-hint">↕ Scrollea para girar la rueda</p>
       </div>
     </section>
 
@@ -3221,54 +3476,59 @@
         </p>
       </div>
 
-      <div class="loc-stack" style="margin-top:28px;">
-
-        <article class="loc-card-v2 fu" style="cursor:default">
-          <p class="loc-script fu">Cabañas</p>
-          <h3 class="loc-name-v2 fu">Cabañas del Río</h3>
-          <a href="https://maps.app.goo.gl/VdED5vb2qeFpCV2u6" target="_blank" rel="noopener noreferrer" class="btn-maps fu" aria-label="Ver Cabañas del Río en Maps">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Ver en Maps
-          </a>
-        </article>
-
-        <article class="loc-card-v2 fu" style="cursor:default">
-          <p class="loc-script fu">Cabañas</p>
-          <h3 class="loc-name-v2 fu">Cabañas El Puente</h3>
-          <a href="https://maps.app.goo.gl/BU1yLmN3GnnCqmUz6" target="_blank" rel="noopener noreferrer" class="btn-maps fu" aria-label="Ver Cabañas El Puente en Maps">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Ver en Maps
-          </a>
-        </article>
-
-        <article class="loc-card-v2 fu" style="cursor:default">
-          <p class="loc-script fu">Cabañas</p>
-          <h3 class="loc-name-v2 fu">Cabañas Ocoxal</h3>
-          <p class="loc-addr-v2 fu"><a href="http://elocoxal.com/" target="_blank" rel="noopener noreferrer" style="color:var(--accent);text-decoration:underline;">elocoxal.com</a></p>
-          <a href="https://maps.app.goo.gl/stw7LsggsFQ92MQp6" target="_blank" rel="noopener noreferrer" class="btn-maps fu" aria-label="Ver Cabañas Ocoxal en Maps">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Ver en Maps
-          </a>
-        </article>
-
-        <article class="loc-card-v2 fu" style="cursor:default">
-          <p class="loc-script fu">Cabañas</p>
-          <h3 class="loc-name-v2 fu">Cabañas Los Fresnos</h3>
-          <a href="https://maps.app.goo.gl/kFEm7VYzt3vL4JLJA" target="_blank" rel="noopener noreferrer" class="btn-maps fu" aria-label="Ver Cabañas Los Fresnos en Maps">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Ver en Maps
-          </a>
-        </article>
-
-        <article class="loc-card-v2 fu" style="cursor:default">
-          <p class="loc-script fu">Cabañas</p>
-          <h3 class="loc-name-v2 fu">Cabañas K-La</h3>
-          <a href="https://maps.app.goo.gl/t7bhtv7B95Kcz6rY6" target="_blank" rel="noopener noreferrer" class="btn-maps fu" aria-label="Ver Cabañas K-La en Maps">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-            Ver en Maps
-          </a>
-        </article>
-
+      <div class="hosp-grid">
+        <!-- Fila 1: 3 cabañas -->
+        <div class="hosp-row">
+          <article class="hosp-card fu">
+            <div class="hosp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+            <span class="hosp-script">Cabañas</span>
+            <h3 class="hosp-name">del Río</h3>
+            <a href="https://maps.app.goo.gl/VdED5vb2qeFpCV2u6" target="_blank" rel="noopener noreferrer" class="btn-hosp-maps" aria-label="Ver en Maps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Maps
+            </a>
+          </article>
+          <article class="hosp-card fu">
+            <div class="hosp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+            <span class="hosp-script">Cabañas</span>
+            <h3 class="hosp-name">El Puente</h3>
+            <a href="https://maps.app.goo.gl/BU1yLmN3GnnCqmUz6" target="_blank" rel="noopener noreferrer" class="btn-hosp-maps" aria-label="Ver en Maps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Maps
+            </a>
+          </article>
+          <article class="hosp-card fu">
+            <div class="hosp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+            <span class="hosp-script">Cabañas</span>
+            <h3 class="hosp-name">Ocoxal</h3>
+            <a href="http://elocoxal.com/" target="_blank" rel="noopener noreferrer" class="hosp-link">elocoxal.com</a>
+            <a href="https://maps.app.goo.gl/stw7LsggsFQ92MQp6" target="_blank" rel="noopener noreferrer" class="btn-hosp-maps" aria-label="Ver en Maps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Maps
+            </a>
+          </article>
+        </div>
+        <!-- Fila 2: 2 cabañas -->
+        <div class="hosp-row" style="max-width:280px;margin:0 auto;">
+          <article class="hosp-card fu">
+            <div class="hosp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+            <span class="hosp-script">Cabañas</span>
+            <h3 class="hosp-name">Los Fresnos</h3>
+            <a href="https://maps.app.goo.gl/kFEm7VYzt3vL4JLJA" target="_blank" rel="noopener noreferrer" class="btn-hosp-maps" aria-label="Ver en Maps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Maps
+            </a>
+          </article>
+          <article class="hosp-card fu">
+            <div class="hosp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
+            <span class="hosp-script">Cabañas</span>
+            <h3 class="hosp-name">K-La</h3>
+            <a href="https://maps.app.goo.gl/t7bhtv7B95Kcz6rY6" target="_blank" rel="noopener noreferrer" class="btn-hosp-maps" aria-label="Ver en Maps">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+              Maps
+            </a>
+          </article>
+        </div>
       </div>
     </section>
 
@@ -3335,8 +3595,8 @@
 
   <!-- ── FOOTER ──────────────────────────────────── -->
   <footer aria-label="Pie de página">
-    <p class="ft-names">Diana Fabiola &amp; Rafael</p>
-    <p class="ft-date">10 · Octubre · MMXXVI · Jilotzingo</p>
+    <p class="ft-names">Fabiola &amp; Rafael</p>
+    <p class="ft-date">10 · Octubre · 2026 · Jilotzingo</p>
     <div class="ft-rule"></div>
     <p class="ft-tagline">Con amor · Para siempre</p>
 
@@ -3729,7 +3989,7 @@
       { slide: slides[2], trigger: '#ubicacion',   target: 0.30 },
       { slide: slides[3], trigger: '#itinerario',  target: 0.20 }, // itinerario es oscuro
       { slide: slides[4], trigger: '#dresscode',   target: 0.32 },
-      { slide: slides[5], trigger: '#kids-policy', target: 0.32 }
+      { slide: slides[5], trigger: '#familia', target: 0.32 }
     ];
 
     // Estado inicial
@@ -3780,49 +4040,64 @@
       );
     });
 
-    /* ── ITINERARY CARDS ANIMATION ──────────────── */
-    var itinLine = document.getElementById('itin-line');
-    gsap.to(itinLine, {
-      height: '100%',
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.itin-container',
-        start: 'top 72%',
-        end: 'bottom 72%',
-        scrub: 0.6
-      }
-    });
+    /* ── ITINERARY V3 — glow orb + gem animation ── */
+    (function(){
+      var glow = document.getElementById('itvGlow');
+      var section = document.getElementById('siti');
+      var items = document.querySelectorAll('.itv3-item');
+      if (!glow || !section) return;
 
-    gsap.utils.toArray('.itin-card').forEach(function (card, i) {
-      // Card entrance
-      gsap.to(card, {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.9,
-        ease: 'power3.out',
-        delay: i * 0.12,
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 88%',
-          toggleActions: 'play none none none'
+      ScrollTrigger.create({
+        trigger: section,
+        start: 'top 58%',
+        end: 'bottom 42%',
+        scrub: 1.8,
+        onUpdate: function(self) {
+          var track = section.querySelector('.itv3-track');
+          if (!track) return;
+          var h = track.offsetHeight - 55;
+          glow.style.top = (self.progress * h) + 'px';
         }
       });
 
-      // Shimmer effect on each card
-      var shine = card.querySelector('.itin-card-shine');
-      gsap.to(shine, {
-        left: '200%',
-        duration: 1.5,
-        ease: 'power2.inOut',
-        delay: 0.5 + i * 0.15,
-        scrollTrigger: {
-          trigger: card,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
+      items.forEach(function(item) {
+        var gem = item.querySelector('.itv3-gem');
+        gsap.fromTo(gem,
+          { scale: 0, opacity: 0 },
+          { scale: 1, opacity: 1, duration: 0.6, ease: 'back.out(2.8)',
+            scrollTrigger: { trigger: item, start: 'top 86%', once: true } });
+        gsap.fromTo([item.querySelector('.itv3-time'), item.querySelector('.itv3-ev')],
+          { y: 14, opacity: 0 },
+          { y: 0, opacity: 1, duration: 0.8, ease: 'power2.out', stagger: 0.08,
+            scrollTrigger: { trigger: item, start: 'top 86%', once: true } });
+      });
+    })();
+
+    /* ── FORTUNE WHEEL GALLERY ──────────────────── */
+    (function(){
+      var wheel = document.getElementById('photoWheel');
+      var wrap = document.getElementById('wgalWrap');
+      if (!wheel) return;
+
+      // Entrance animation
+      gsap.fromTo(wrap,
+        { opacity: 0, scale: 0.85, rotation: -15 },
+        { opacity: 1, scale: 1, rotation: 0, duration: 1.4, ease: 'back.out(1.4)',
+          scrollTrigger: { trigger: wrap, start: 'top 82%', once: true } });
+
+      // Scroll-driven rotation
+      var currentAngle = 0;
+      ScrollTrigger.create({
+        trigger: wrap,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: 1.2,
+        onUpdate: function(self) {
+          currentAngle = self.progress * 360;
+          wheel.style.transform = 'rotate(' + currentAngle + 'deg)';
         }
       });
-    });
+    })();
 
     /* ── GALLERY ANIMATIONS ─────────────────────── */
     gsap.utils.toArray('.gal-item').forEach(function (item, i) {
@@ -4033,7 +4308,7 @@
         names.push(v || '(sin nombre)');
       });
 
-      var msg = '¡Hola! Con mucho gusto confirmo mi asistencia a la celebración de Diana Fabiola Lasso Cruz & Rafael Perez Peña. 🎉\n\n' +
+      var msg = '¡Hola! Con mucho gusto confirmo mi asistencia a la celebración de Fabiola Lasso Cruz & Rafael Perez Peña. 🎉\n\n' +
         '✅ Asistiré con ' + count + ' pase' + (count > 1 ? 's' : '') + '.\n\n' +
         'Mis acompañantes:\n';
 
