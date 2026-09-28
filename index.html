@@ -2288,6 +2288,7 @@
     }
     .gift-heart-wrapper:nth-child(2) .gift-heart { animation-delay: -1.2s; }
     .gift-heart-wrapper:nth-child(3) .gift-heart { animation-delay: -2.4s; }
+    .gift-heart-wrapper:nth-child(4) .gift-heart { animation-delay: -3.6s; }
     /* El sobre pulsa desde el centro (no desde la punta inferior como el corazón) */
     .gift-envelope { transform-origin: center center; }
 
@@ -2377,6 +2378,7 @@
     }
     .gift-heart-wrapper:nth-child(2) .heart-shape path { animation-delay: -1.2s; }
     .gift-heart-wrapper:nth-child(3) .heart-shape path { animation-delay: -2.4s; }
+    .gift-heart-wrapper:nth-child(4) .heart-shape path { animation-delay: -3.6s; }
 
     @keyframes heart-stroke {
       0%, 100% { stroke: #C5B4A3; stroke-width: 1.6; }
@@ -2638,7 +2640,7 @@
       margin-left: -50px;
       margin-top: -207px;
       transform-origin: 50px 207px;
-      transform: rotate(calc(var(--i) * 60deg));
+      transform: rotate(calc(var(--i) * 45deg));
     }
     .wgal-spoke {
       position: absolute;
@@ -3316,7 +3318,7 @@
           <p class="env-tap-hint fu">Toca el sobre para abrir</p>
         </article>
 
-        <!-- ── Tarjeta 2: BBVA (corazón centrado) ── -->
+        <!-- ── Tarjeta 2: Mercado Pago (corazón centrado) ── -->
         <article class="gift-heart-wrapper fu">
           <div class="gift-heart">
             <svg class="heart-shape" viewBox="0 0 280 260" preserveAspectRatio="none" aria-hidden="true">
@@ -3330,15 +3332,37 @@
                     fill="url(#heart-fill-2)" stroke="#C5B4A3" stroke-width="1.6"/>
             </svg>
             <div class="heart-content" style="padding:52px 40px 80px;gap:4px;justify-content:center;align-items:center;text-align:center;">
-              <!-- Logotipo BBVA estilizado -->
-              <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">BBVA</div>
-              <div style="font-family:var(--serif);font-size:20px;font-weight:500;color:var(--text);letter-spacing:.5px;line-height:1.2;">Fabiola Cruz</div>
+              <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">Mercado Pago</div>
+              <div style="font-family:var(--serif);font-size:18px;font-weight:500;color:var(--text);letter-spacing:.5px;line-height:1.2;">Diana Fabiola Lasso Cruz</div>
               <div style="width:40px;height:1px;background:var(--gold);margin:6px auto;opacity:.6;"></div>
-              <div style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:2.5px;color:var(--text);">4152 3142</div>
-              <div style="font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:2.5px;color:var(--text);">6101 9981</div>
+              <div style="font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.5px;color:var(--text);">7229 6901 0335</div>
+              <div style="font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:1.5px;color:var(--text);">7093 04</div>
             </div>
           </div>
-          <button type="button" class="gift-btn-heart copy-clabe fu" data-clabe="4152314261019981">Copiar número</button>
+          <button type="button" class="gift-btn-heart copy-clabe fu" data-clabe="722969010335709304">Copiar número</button>
+        </article>
+
+        <!-- ── Tarjeta 3: Liverpool (corazón centrado) ── -->
+        <article class="gift-heart-wrapper fu">
+          <div class="gift-heart">
+            <svg class="heart-shape" viewBox="0 0 280 260" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="heart-fill-3" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFF8F8"/>
+                  <stop offset="100%" stop-color="#EDE3D7"/>
+                </linearGradient>
+              </defs>
+              <path d="M140 58 C158 18 228 18 228 80 C228 142 140 230 140 230 C140 230 52 142 52 80 C52 18 122 18 140 58 Z"
+                    fill="url(#heart-fill-3)" stroke="#C5B4A3" stroke-width="1.6"/>
+            </svg>
+            <div class="heart-content" style="padding:52px 40px 80px;gap:4px;justify-content:center;align-items:center;text-align:center;">
+              <div style="font-family:var(--sans);font-size:9px;font-weight:700;letter-spacing:6px;text-transform:uppercase;color:var(--accent);margin-bottom:4px;">Liverpool</div>
+              <div style="font-family:var(--serif);font-size:20px;font-weight:500;color:var(--text);letter-spacing:.5px;line-height:1.2;">Mesa de Regalos</div>
+              <div style="width:40px;height:1px;background:var(--gold);margin:6px auto;opacity:.6;"></div>
+              <div style="font-family:var(--sans);font-size:12px;font-weight:400;color:var(--text);line-height:1.4;">Evento No. 52003141</div>
+            </div>
+          </div>
+          <a href="https://mesaderegalos.liverpool.com.mx/milistaderegalos/52003141" target="_blank" rel="noopener noreferrer" class="gift-btn-heart fu" style="text-decoration:none;">Ver mesa de regalos</a>
         </article>
       </div>
     </section>
@@ -3360,7 +3384,7 @@
       </div>
       <p class="album-text fu">Escanea el código QR para subir tus fotos al álbum del evento. Queremos vivir el día desde tus ojos también.</p>
       <div class="album-qr fu">
-        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=6B5B4E&bgcolor=FAF6F0&data=https%3A%2F%2Fboda-fabi-y-rafa.vercel.app" alt="QR invitación Fabiola y Rafael" width="240" height="240" loading="lazy" />
+        <img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&color=6B5B4E&bgcolor=FAF6F0&data=https%3A%2F%2Fdocs.google.com%2Fforms%2Fd%2Fe%2F1FAIpQLScQFdNrwIOkvNQhT1RlYe8aTfKuP2AuPF43GiKtp-_dcmq_9Q%2Fviewform%3Fusp%3Ddialog" alt="QR álbum de fotos Fabiola y Rafael" width="240" height="240" loading="lazy" />
       </div>
     </section>
 
@@ -3417,6 +3441,18 @@
               <div class="wgal-spoke" aria-hidden="true"></div>
               <div class="wgal-card">
                 <img src="foto-6.jpg" alt="Fabiola y Rafael foto 6" loading="lazy" />
+              </div>
+            </div>
+            <div class="wgal-item" style="--i:6">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="foto-7.jpg" alt="Fabiola y Rafael foto 7" loading="lazy" />
+              </div>
+            </div>
+            <div class="wgal-item" style="--i:7">
+              <div class="wgal-spoke" aria-hidden="true"></div>
+              <div class="wgal-card">
+                <img src="foto-8.jpg" alt="Fabiola y Rafael foto 8" loading="lazy" />
               </div>
             </div>
           </div>
@@ -3491,7 +3527,7 @@
             <div class="hosp-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg></div>
             <span class="hosp-script">Cabañas</span>
             <h3 class="hosp-name">K-La</h3>
-            <a href="https://maps.app.goo.gl/t7bhtv7B95Kcz6rY6" target="_blank" rel="noopener noreferrer" class="btn-hosp-maps" aria-label="Ver en Maps">
+            <a href="https://maps.app.goo.gl/Aexk9xgoyRxbLP8X7" target="_blank" rel="noopener noreferrer" class="btn-hosp-maps" aria-label="Ver en Maps">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
               Maps
             </a>
@@ -4313,5 +4349,33 @@
   });
   </script>
 
+<script>
+/* ELYSIUM AUDIO UNLOCK v1 — la musica se estrena DENTRO del primer gesto real del invitado.
+   iOS/Chrome retiran el permiso del gesto a los pocos ms, asi que un play() que corre al
+   terminar el video del sobre llega tarde y es rechazado en silencio. */
+(function(){
+  if(window.__elyAudioUnlock) return; window.__elyAudioUnlock=1;
+  var done=false, tries=0;
+  function A(){ return document.querySelector('audio'); }
+  function unlock(){
+    if(done) return;
+    var a=A(); if(!a) return;
+    try{ if(a.preload==='none'){ a.preload='auto'; a.load(); } }catch(e){}
+    if(!a.paused){ done=true; return; }
+    var p;
+    try{ p=a.play(); }catch(e){ return; }
+    if(p && p.then){ p.then(function(){ done=true; }).catch(function(){}); }
+    else { done=true; }
+  }
+  ['pointerdown','touchstart','touchend','click','keydown'].forEach(function(ev){
+    document.addEventListener(ev, unlock, {capture:true, passive:true});
+  });
+  var iv=setInterval(function(){
+    var a=A();
+    if(done || (a && !a.paused)){ done=true; clearInterval(iv); return; }
+    if(++tries>120) clearInterval(iv);
+  },1000);
+})();
+</script>
 </body>
 </html>
